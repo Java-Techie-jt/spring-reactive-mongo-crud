@@ -31,11 +31,12 @@ public class ProductController {
 
     @PostMapping
     public Mono<ProductDto> saveProduct(@RequestBody Mono<ProductDto> productDtoMono){
+        System.out.println("controller method called ...");
         return service.saveProduct(productDtoMono);
     }
 
     @PutMapping("/update/{id}")
-    public Mono<ProductDto> saveProduct(@RequestBody Mono<ProductDto> productDtoMono,@PathVariable String id){
+    public Mono<ProductDto> updateProduct(@RequestBody Mono<ProductDto> productDtoMono,@PathVariable String id){
         return service.updateProduct(productDtoMono,id);
     }
 
